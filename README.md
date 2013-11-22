@@ -1,6 +1,6 @@
 # grunt-phptpl
 
-> The best Grunt plugin ever.
+>Processes PHP files to static files.  If you want to create dynamic PHP templates that compile into a static entity, this is for you.
 
 ## Getting Started
 This plugin requires Grunt `~0.4.2`
