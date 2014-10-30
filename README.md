@@ -39,6 +39,17 @@ grunt.initConfig({
 
 ### Usage Examples
 
+#### Variables
+You can send some datas to PHP engine. You can access them inside PHP file using [$argv](http://php.net/manual/en/reserved.variables.argv.php)
+```js
+variables: {
+	options: {
+		args: ['one', 'two', 'three']
+	}
+},
+```
+
+
 #### Single file
 A single file is processed and written to a single file.
 
