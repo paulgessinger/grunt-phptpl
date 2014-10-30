@@ -3,7 +3,7 @@
   "description": "Processes PHP files (e.g. PHP templates) to static files.",
   "version": "0.1.0",
   "homepage": "https://github.com/paulgessinger/grunt-phptpl",
-  "author": [{
+  "authors": [{
     "name": "Paul Gessinger",
     "email": "hello@paulgessinger.com",
     "url": "http://paulgessinger.com"
