@@ -36,6 +36,16 @@ exports.phptpl = {
 
     test.done();
   },
+  single_arguments: function(test) {
+    test.expect(1) ;
+    
+    var actual = grunt.file.read('tmp/single_arguments.html') ;
+    var expected = grunt.file.read('test/expected/single_arguments.html') ;
+    
+    test.equal(actual, expected, 'single file with arguments') ;
+    
+    test.done();
+  },
   multiple_concat: function(test) {
     test.expect(1);
 

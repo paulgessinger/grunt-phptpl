@@ -67,15 +67,20 @@ module.exports = function(grunt) {
 			var processFiles = function(files, cwd, callback) {
 			
 				var i = 0 ;
-				var output = '' ;
+        var order = 0 ;
+				var output = {} ;
 			
 				files.forEach(function(elem) {
+          var j = order ;
 					var args = options.args.slice(0);
 					args.unshift(cwd+elem);
+          grunt.log.debug(args) ;
 					grunt.util.spawn({
 						cmd: 'php',
 						args: args
 					}, function (error, result, code) {
+            
+            
 						if(code !== 0) {
 							
 							grunt.log.error('An error occurred') ;
@@ -83,20 +88,37 @@ module.exports = function(grunt) {
 							
 						}
 						else {
-							
+							grunt.log.debug('index: '+j) ;
 							grunt.log.debug('PHP file '+elem+' executed.') ;
-							output += result ;
-							
+							//output += result ;
+							output[j] = result ;
 						}
 						
 						i++;
 						totalFileCount++;
 
 						if(i === files.length) {
-							// this was the last file in this batch, run callback
-							callback(output) ;
+							// this was the last file in this batch, sort, then join result, then run callback
+              var out = '' ;
+              
+              var keys = [];
+
+              for(var key in output){
+                  if(output.hasOwnProperty(key)){
+                      keys.push(key);
+                  }
+              }
+              
+              keys.sort() ;
+              
+              for(var k=0;k<keys.length;k++) {
+                out += output[keys[k]] ;
+              }
+              
+							callback(out) ;
 						}
-				  	});
+				  });  
+          order++ ;
 				}) ;
 			} ;
 			
