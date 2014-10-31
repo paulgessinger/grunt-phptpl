@@ -16,7 +16,8 @@ module.exports = function(grunt) {
 	grunt.registerMultiTask('phptpl', 'The best Grunt plugin ever.', function() {
     	// Merge task-specific and/or target-specific options with these defaults.
     	var options = this.options({
-			ext: '.html'
+			ext: '.html',
+			args: []
     	});
 		
 		var totalFileGroupCount = 0 ;
@@ -69,9 +70,11 @@ module.exports = function(grunt) {
 				var output = '' ;
 			
 				files.forEach(function(elem) {
+					var args = options.args.slice(0);
+					args.unshift(cwd+elem);
 					grunt.util.spawn({
 						cmd: 'php',
-						args: [cwd+elem]
+						args: args
 					}, function (error, result, code) {
 						if(code !== 0) {
 							
