@@ -38,6 +38,15 @@ module.exports = function(grunt) {
 			}
 		},
 		
+    single_arguments: {
+      options: {
+        args: ['ARGVALUE1!', 'ARGVALUE2!']
+      },
+      files: {
+        'tmp/single_arguments.html': ['test/fixtures/single_arguments.php']
+      }
+    },
+    
 		multiple_concat: {
 			options: {
 			},
