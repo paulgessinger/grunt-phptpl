@@ -1,7 +1,7 @@
 {
   "name": "grunt-phptpl",
   "description": "Processes PHP files (e.g. PHP templates) to static files.",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "homepage": "https://github.com/paulgessinger/grunt-phptpl",
   "authors": [{
     "name": "Paul Gessinger",
