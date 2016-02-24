@@ -3,15 +3,18 @@
   "description": "Processes PHP files (e.g. PHP templates) to static files.",
   "version": "0.1.1",
   "homepage": "https://github.com/paulgessinger/grunt-phptpl",
-  "authors": [{
-    "name": "Paul Gessinger",
-    "email": "hello@paulgessinger.com",
-    "url": "http://paulgessinger.com"
-  }, {
-    "name": "Alberto Bottarini",
-    "email": "alberto.bottarini@gmail.com",
-    "url": "http://albertobottarini.com"
-  }],
+  "authors": [
+    {
+      "name": "Paul Gessinger",
+      "email": "hello@paulgessinger.com",
+      "url": "http://paulgessinger.com"
+    },
+    {
+      "name": "Alberto Bottarini",
+      "email": "alberto.bottarini@gmail.com",
+      "url": "http://albertobottarini.com"
+    }
+  ],
   "repository": {
     "type": "git",
     "url": "git@github.com:paulgessinger/grunt-phptpl.git"
@@ -39,7 +42,7 @@
     "grunt": "~0.4.2"
   },
   "peerDependencies": {
-    "grunt": "~0.4.2"
+    "grunt": ">=0.4.0"
   },
   "keywords": [
     "gruntplugin"
